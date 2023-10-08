@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { WelcomePopupAnnouncingTheLatestfilmsAndSeries } from "../../components/layouts";
+import { WelcomeAnnouncingLatestfilms_Series } from "../../components/layouts";
 import {
   BoxNetflix,
   RootHome,
@@ -65,7 +65,7 @@ export default function Home() {
           <ThreeBoxNetflixSpan component='span' className='StylesSpanRight' />
         </BoxNetflix>
         <TypoTitleHome variant='h2'>Net Movie</TypoTitleHome> */
-        {openModal ? <WelcomePopupAnnouncingTheLatestfilmsAndSeries /> : ""}
+        {openModal ? <WelcomeAnnouncingLatestfilms_Series /> : ""}
       </RootHome>
     </>
   );
