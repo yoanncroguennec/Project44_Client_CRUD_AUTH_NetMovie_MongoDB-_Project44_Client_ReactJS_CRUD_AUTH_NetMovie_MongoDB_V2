@@ -19,14 +19,13 @@ import television94 from "./television94.png";
 import contact from "./contact1.jpg";
 import myProfile from "./myProfile.jpg";
 
-  const dataBtnMoreEffectOpeningCircleMenu = [
-    ["", "#3E84E6", img4, television94],
-    ["", "#15AB88", moreApplication],
-    ["", "#EB5089", bgWebRadios, iconsRadio64],
-    ["Mon profil", "#AFD91A", myProfile],
-    ["Contact", "#F27127", contact],
-  ];
-
+const dataBtnMoreEffectOpeningCircleMenu = [
+  ["", "#3E84E6", img4, television94],
+  ["", "#15AB88", moreApplication],
+  ["", "#EB5089", bgWebRadios, iconsRadio64],
+  ["Mon profil", "#AFD91A", myProfile],
+  ["Contact", "#F27127", contact],
+];
 
 // COMMON UTILS
 // import { Navbar } from "../../../../badMovies/movies/components/layouts";
@@ -63,7 +62,7 @@ export default function AppLayout({
   token,
   id_Of_ConnectedUser,
 }) {
-
+  const [showNavBottom, setShowNavBottom] = useState(false);
   const [openBtnMoreCircleMenu, setOpenBtnMoreCircleMenu] = useState(false);
 
   function OpenBtnMoreCircleMenu() {
@@ -72,7 +71,7 @@ export default function AppLayout({
 
   //////////////////// RESPONSIVE ////////////////////
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("md"))
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
 
   const [darkMode, setDarkMode] = useState(false);
 
@@ -437,7 +436,8 @@ export default function AppLayout({
         consequatur obcaecati vero, neque animi error nihil nemo suscipit,
         impedit sed in!
       </div>
-      {matches && (
+
+      {matches && showNavBottom ? (
         <div
           style={{
             bottom: 0,
@@ -458,7 +458,13 @@ export default function AppLayout({
           {/* *********************************************** */}
           <div
             onClick={OpenBtnMoreCircleMenu}
-            style={{ position: "absolute", zIndex: "55", height: "54px", width: "55px", top: "100px" }}
+            style={{
+              position: "absolute",
+              zIndex: "55",
+              height: "54px",
+              width: "55px",
+              top: "100px",
+            }}
           >
             {openBtnMoreCircleMenu ? (
               <div
@@ -545,42 +551,13 @@ export default function AppLayout({
                 );
               }
             )}
-          </div>
-
-          {/* *********************************************** */}
-          {/* *********************************************** */}
-          {/* *********************************************** */}
-          {/* *********************************************** */}
-          {/* <div
-            style={{
-              background: "",
-              top: "15px",
-              position: "relative",
-              display: "flex",
-              flexWrap: "nowrap",
-              justifyContent: "center",
-              height: "25vh",
-              // width: "100%",
-            }}
-          >
-            
             <div
-              style={{
-                background: "#000",
-                display: "flex",
-                flexWrap: "nowrap",
-                justifyContent: "center",
-                alignItems: "center",
-                border: "2px solid #F00",
-                borderRadius: "50%",
-                height: "35px",
-                width: "35px",
-                zIndex: "99",
-              }}
+              onClick={() => setShowNavBottom(!showNavBottom)}
+              style={{ background: "#FFF", width: "80px"}}
             >
-              <FaPlus color='grey' size={20} />
+              <Typography sx={{ fontWeight: "bold"}} variant='caption'>Fermer Menu</Typography>
             </div>
-          </div> */}
+          </div>
           <div
             style={{
               height: `${matches && "10vh"}`,
@@ -598,6 +575,24 @@ export default function AppLayout({
           >
             <ExtendNavbarCellular />
           </div>
+        </div>
+      ) : (
+        <div
+          onClick={() => setShowNavBottom(!showNavBottom)}
+          style={{
+            bottom: 0,
+            background: "",
+            height: `${matches && "5vh"}`,
+            overflow: "hidden",
+            position: "absolute",
+            display: "flex",
+            flexWrap: "nowrap",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          cccccccccccc
         </div>
       )}
     </div>
