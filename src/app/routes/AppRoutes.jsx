@@ -4,14 +4,15 @@ import Cookies from "js-cookie";
 // PAGES
 import {
   // Page_Featured_And_SliderCategoryListMovies,
-  Home, ListAllMovies, Page_Featured_And_SliderCategoryListMovies,
-} from "../pages";
+  Home,
+  // ListAllMovies,
+  Page_Featured_And_SliderCategoryListMovies,
+} from "../movies/pages";
 // Layouts
 import {
   AppLayout,
-  // AppLayout,
-  WelcomePopupAnnouncingTheLatestfilmsAndSeries,
-} from "../components/layouts";
+  WelcomeAnnouncingLatestfilms_Series,
+} from "../movies/components/layouts";
 
 export default function Router() {
   ///////// COOKIES
@@ -48,7 +49,7 @@ export default function Router() {
       children: [
         {
           path: "/",
-          element: <WelcomePopupAnnouncingTheLatestfilmsAndSeries />,
+          element: <WelcomeAnnouncingLatestfilms_Series />,
         },
       ],
     },
@@ -68,10 +69,10 @@ export default function Router() {
           path: "/featured_SliderCategoryListMovies",
           element: <Page_Featured_And_SliderCategoryListMovies />,
         },
-        {
-          path: "movies/listAllMovies",
-          element: <ListAllMovies />,
-        },
+        // {
+        //   path: "movies/listAllMovies",
+        //   element: <ListAllMovies />,
+        // },
       ],
     },
   ]);
