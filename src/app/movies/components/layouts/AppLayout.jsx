@@ -6,10 +6,27 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { AiOutlineClose } from "react-icons/ai";
 import { Link, Outlet } from "react-router-dom";
 import axios from "axios";
 import ExtendNavbarCellular from "./navbar/extendNavbarCellular/ExtendNavbarCellular";
 import { FaPlus } from "react-icons/fa";
+import bgWebRadios from "./radios1.jpg";
+import iconsRadio64 from "./iconsRadio64.png";
+import moreApplication from "./moreApplication.jpg";
+import img4 from "./img4.jpeg";
+import television94 from "./television94.png";
+import contact from "./contact1.jpg";
+import myProfile from "./myProfile.jpg";
+
+  const dataBtnMoreEffectOpeningCircleMenu = [
+    ["", "#3E84E6", img4, television94],
+    ["", "#15AB88", moreApplication],
+    ["", "#EB5089", bgWebRadios, iconsRadio64],
+    ["Mon profil", "#AFD91A", myProfile],
+    ["Contact", "#F27127", contact],
+  ];
+
 
 // COMMON UTILS
 // import { Navbar } from "../../../../badMovies/movies/components/layouts";
@@ -46,6 +63,13 @@ export default function AppLayout({
   token,
   id_Of_ConnectedUser,
 }) {
+
+  const [openBtnMoreCircleMenu, setOpenBtnMoreCircleMenu] = useState(false);
+
+  function OpenBtnMoreCircleMenu() {
+    setOpenBtnMoreCircleMenu((prevBool) => !prevBool);
+  }
+
   //////////////////// RESPONSIVE ////////////////////
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
@@ -96,7 +120,7 @@ export default function AppLayout({
         height: `${matches && "100vh"}`,
       }}
     >
-       <div
+      <div
         style={{
           // background: "#000",
           // color: "#F00",
@@ -439,7 +463,7 @@ export default function AppLayout({
           style={{
             bottom: 0,
             background: "",
-            height: `${matches && "19vh"}`,
+            height: `${matches && "45vh"}`,
             overflow: "hidden",
             position: "absolute",
             display: "flex",
@@ -449,7 +473,106 @@ export default function AppLayout({
             width: "100%",
           }}
         >
+          {/* *********************************************** */}
+          {/* *********************************************** */}
+          {/* *********************************************** */}
+          {/* *********************************************** */}
           <div
+            onClick={OpenBtnMoreCircleMenu}
+            style={{ position: "absolute", zIndex: "55", height: "54px", width: "55px", top: "100px" }}
+          >
+            {openBtnMoreCircleMenu ? (
+              <div
+                className='closecircularMenu'
+                style={{
+                  alignItems: "center",
+                  background: "#FFF",
+                  border: "2px solid #F00",
+                  display: "flex",
+                  height: "100%",
+                  justifyContent: "center",
+                  borderRadius: "50%",
+                  width: "100%",
+                }}
+              >
+                <AiOutlineClose color='#F00' size={25} />
+              </div>
+            ) : (
+              <div
+                className='circularMenuIcon'
+                style={{
+                  alignItems: "center",
+                  background: "#FFF",
+                  border: "2px solid #F00",
+                  borderRadius: "50%",
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                  // height: "18px",
+                  justifyContent: "center",
+                  width: "100%",
+                  zIndex: "9",
+                }}
+              >
+                <FaPlus color='#F00' size={25} />
+              </div>
+            )}
+            {dataBtnMoreEffectOpeningCircleMenu.map(
+              ([page, color, bgRounded, icon], index) => {
+                // rotate(${(360/5) => 360° / 5 because 5 items in array "dataBtnMoreEffectOpeningCircleMenu"
+                const rotation =
+                  (-223 / dataBtnMoreEffectOpeningCircleMenu.length) * index;
+                const transitionDelay = index * 75;
+                return (
+                  <div
+                    key={page}
+                    className='menuItem'
+                    style={{
+                      alignItems: "center",
+                      backgroundImage: `url("${bgRounded}")`,
+                      backgroundSize: "cover",
+                      opacity: "0.9",
+                      borderRadius: "50%",
+                      display: "flex",
+                      justifyContent: "center",
+                      left: 0,
+                      height: "100%",
+                      position: "absolute",
+                      top: 0,
+                      transition: "transform 500ms ease",
+                      transitionDelay: `${
+                        openBtnMoreCircleMenu ? transitionDelay : 0
+                      } ms`,
+                      transform: `rotate(${rotation}deg) translate(${
+                        openBtnMoreCircleMenu ? 175 : 0
+                      }%)`,
+                      width: "100%",
+                      zIndex: "-1",
+                    }}
+                  >
+                    <span style={{ transform: `rotate(${-rotation}deg)` }}>
+                      {icon && (
+                        <img
+                          alt='icon'
+                          src={icon}
+                          style={{
+                            height: "35px",
+                            width: "35px",
+                          }}
+                        />
+                      )}
+                    </span>
+                  </div>
+                );
+              }
+            )}
+          </div>
+
+          {/* *********************************************** */}
+          {/* *********************************************** */}
+          {/* *********************************************** */}
+          {/* *********************************************** */}
+          {/* <div
             style={{
               background: "",
               top: "15px",
@@ -461,6 +584,7 @@ export default function AppLayout({
               // width: "100%",
             }}
           >
+            
             <div
               style={{
                 background: "#000",
@@ -477,7 +601,7 @@ export default function AppLayout({
             >
               <FaPlus color='grey' size={20} />
             </div>
-          </div>
+          </div> */}
           <div
             style={{
               height: `${matches && "10vh"}`,
