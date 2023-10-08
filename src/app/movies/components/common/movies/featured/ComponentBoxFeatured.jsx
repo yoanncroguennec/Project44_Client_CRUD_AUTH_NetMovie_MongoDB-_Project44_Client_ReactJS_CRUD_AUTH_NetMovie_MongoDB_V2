@@ -1,7 +1,7 @@
 import { Typography, useTheme, useMediaQuery } from "@mui/material";
 import { Link } from "react-router-dom";
 // LAYOUTS
-import { GlobalBtn } from "../../../layouts";
+import { GlobalBtns } from "../../../layouts";
 // STYLES
 import {
   BoxActiveDropdown,
@@ -55,13 +55,6 @@ export default function ComponentBoxFeatured({
       icon: <BsInfoCircle size={matches ? sizeIconMobile : sizeIconDesktop} />,
       title: "Infos",
     },
-    {
-      onClickAction: OpenModalTheWholeFilm,
-      icon: (
-        <BsFillPlayFill size={matches ? sizeIconMobile : sizeIconDesktop} />
-      ),
-      title: "Voir le film",
-    },
   ];
 
     function truncateDesc(str) {
@@ -110,14 +103,30 @@ export default function ComponentBoxFeatured({
         <Typography>{truncateDesc(`${randomMovie.desc}`)}</Typography>
 
         <BoxThreeBtns>
+          {/* Two Btns Trailer + Info Movie */}
           {dataThreeBtns.map(({ onClickAction, icon, title }) => (
-            <GlobalBtn
+            <GlobalBtns
               colorIconBtn='#FFF'
               onClickAction={onClickAction}
               iconBtn={icon}
               textBtn={title}
             />
           ))}
+          {/* Btn The whole Movie */}
+          {matches ? (
+            ""
+          ) : (
+            <GlobalBtns
+              colorIconBtn='#FFF'
+              onClickAction={OpenModalTheWholeFilm}
+              iconBtn={
+                <BsFillPlayFill
+                  size={matches ? sizeIconMobile : sizeIconDesktop}
+                />
+              }
+              textBtn='Voir le film'
+            />
+          )}
         </BoxThreeBtns>
       </BoxBGTitleDescBtnsMovieRandom>
     </BoxFeatured>

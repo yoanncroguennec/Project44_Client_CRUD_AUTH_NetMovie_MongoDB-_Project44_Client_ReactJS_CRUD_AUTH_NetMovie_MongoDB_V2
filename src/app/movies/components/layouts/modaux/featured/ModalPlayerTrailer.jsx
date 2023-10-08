@@ -3,7 +3,7 @@ import ReactPlayer from "react-player";
 // STYLES
 import { BoxModalPlayerTrailer } from "./StylesModalPlayerTrailer";
 // ICONS
-import { AiOutlineClose } from "../../../../../../app/utils/assets/movies/icons";
+import { AiOutlineClose } from "../../../../../utils/assets/movies/icons";
 
 export default function ModalPlayerTrailer({
   // Props

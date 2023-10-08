@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import {
-//   Featured,
-//   ListSliderCategoryListMovies,
-// } from "../../../components/common";
+import {
+  Featured,
+  // ListSliderCategoryListMovies,
+} from "../../../components/common";
 
 export default function Page_Featured_And_SliderCategoryListMovies() {
   const [categoryListMovie, setCategoryListMovie] = useState([]);
@@ -29,10 +29,11 @@ export default function Page_Featured_And_SliderCategoryListMovies() {
     <>chargement</>
   ) : (
     <div
-      // A REVOIR LE BG COLOR CAR A SUPRIMER ET METTRE UN TOGLLE DARK MODE A LA RACINE
-      style={{ background: "#000" }}
+    // A REVOIR LE BG COLOR CAR A SUPRIMER ET METTRE UN TOGLLE DARK MODE A LA RACINE
+    // style={{ background: "#000" }}
     >
-      {/* <Featured />
+      <Featured />
+      {/* 
       {categoryListMovie.map((list, index) => (
         <ListSliderCategoryListMovies key={index} list={list} />
       ))} */}

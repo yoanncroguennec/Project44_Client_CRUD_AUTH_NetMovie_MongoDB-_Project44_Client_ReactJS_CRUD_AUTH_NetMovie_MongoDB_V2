@@ -3,7 +3,7 @@ import axios from "axios";
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import moment from "moment";
 import "moment/locale/fr";
-import { FormatLocalTime } from "../../../../../app/utils/functions";
+import { FormatLocalTime } from "../../../../utils/functions";
 var now = moment();
 
 export default function UserLocationIP_AddressAndLocalTimeDate({

@@ -32,6 +32,7 @@
     "react-transition-group": "^4.4.5",
     "react-vanilla-tilt": "^1.0.0",
     "slick-carousel": "^1.8.1",
+    "swiper": "^9.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

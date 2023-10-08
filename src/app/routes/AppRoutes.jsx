@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 import {
   // Page_Featured_And_SliderCategoryListMovies,
   Home,
-  // ListAllMovies,
+  ListAllMovies,
   Page_Featured_And_SliderCategoryListMovies,
 } from "../movies/pages";
 // Layouts
@@ -69,10 +69,10 @@ export default function Router() {
           path: "/featured_SliderCategoryListMovies",
           element: <Page_Featured_And_SliderCategoryListMovies />,
         },
-        // {
-        //   path: "movies/listAllMovies",
-        //   element: <ListAllMovies />,
-        // },
+        {
+          path: "movies/listAllMovies",
+          element: <ListAllMovies />,
+        },
       ],
     },
   ]);

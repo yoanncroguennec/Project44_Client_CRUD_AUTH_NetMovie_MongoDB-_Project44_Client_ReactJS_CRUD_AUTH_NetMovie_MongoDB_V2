@@ -16,7 +16,7 @@ import {
   DialogActions,
 } from "@mui/material";
 // LAYOUTS
-import { GlobalBtn } from "..";
+import { GlobalBtns } from "..";
 
 // STYLES
 import { RootDialog } from "./StylesWelcomeAnnouncingLatestfilms_Series";
@@ -186,7 +186,7 @@ export default function WelcomeAnnouncingLatestfilms_Series() {
       <DialogActions
         sx={{ alignItems: "center", display: "flex", justifyContent: "center" }}
       >
-        <GlobalBtn
+        <GlobalBtns
           urlBtn={"featured_SliderCategoryListMovies"}
           textBtn={"Accédez aux films"}
         />

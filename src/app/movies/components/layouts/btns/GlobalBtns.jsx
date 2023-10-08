@@ -2,7 +2,7 @@ import { Tooltip, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-export default function GlobalBtn({
+export default function GlobalBtns({
   titleTooltipBtn,
   colorIconBtn,
   marginRightIconBtn,
@@ -32,9 +32,9 @@ export default function GlobalBtn({
             display: "flex",
             flexWrap: "nowrap",
             justifyContent: "center",
-            marginBottom: "50px",
+            // marginBottom: "50px",
             alignItems: "center",
-            padding: "5px 25px",
+            padding: `${matches ? "2px 5px" : "5px 25px"}`,
             borderRadius: "50px",
             cursor: "pointer",
           }}
@@ -50,7 +50,10 @@ export default function GlobalBtn({
           >
             {iconBtn}
           </div>
-          <Typography style={{ color: "#F00", fontWeight: "bold" }} variant={matches ? "body1" : "h6"}>
+          <Typography
+            style={{ color: "#F00", fontWeight: "bold" }}
+            variant={matches ? "caption" : "h6"}
+          >
             {textBtn}
           </Typography>
         </motion.div>
