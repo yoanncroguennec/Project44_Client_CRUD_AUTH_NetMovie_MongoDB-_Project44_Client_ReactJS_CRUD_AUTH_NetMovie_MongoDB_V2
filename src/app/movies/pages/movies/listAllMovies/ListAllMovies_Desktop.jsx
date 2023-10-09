@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
-import { Typography, useTheme, useMediaQuery } from "@mui/material";
-// COMPONENTS COMMON
-// import { BooleanIfMovieViewed_Rating } from "../../../components/utils";
+import { Typography } from "@mui/material";
 // COMPONENTS UTILS
-// import {
-//   LoaderSpinner,
-//   ScrollIndicatorProgressBar,
-//   BackToTop,
-//   Pagination,
-// } from "../../../components/utils";
+import {
+  BooleanIfMovieViewed_Rating,
+  LoaderSpinner,
+  ScrollIndicatorProgressBar,
+  BackToTop,
+  Pagination,
+} from "../../../components/utils";
 // STYLES
 import {
   TypoTitlePage,
@@ -24,21 +23,23 @@ export default function ListAllMovies_Desktop({
   countAllMovies,
   styleImg,
   TruncateDesc,
+  page,
+  setPage,
+  limit,
 }) {
   return (
     <div>
-      {" "}
-      {/* <ScrollIndicatorProgressBar />
-      <BackToTop /> */}
+      <ScrollIndicatorProgressBar />
+      <BackToTop />
       <TypoTitlePage variant='h4'>
         Nombres de films : {countAllMovies} films
       </TypoTitlePage>
-      {/* <Pagination
+      <Pagination
         page={page}
         countAllMovies={countAllMovies}
         setPage={setPage}
         limit={limit}
-      /> */}
+      />
       <BoxListMovies>
         {allMovies
           // sortByAlphabeticalOrder
@@ -98,12 +99,12 @@ export default function ListAllMovies_Desktop({
             )
           )}
       </BoxListMovies>
-      {/* <Pagination
+      <Pagination
         page={page}
         countAllMovies={countAllMovies}
         setPage={setPage}
         limit={limit}
-      /> */}
+      />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import AppLayout from "./AppLayout";
+import Movie_ID_Layout from "./Movie_ID_Layout";
 // NAVBAR
 import ExtendNavbarBottomCellular from "./navbar/navbarBottomCellular/ExtendNavbarBottomCellular";
 // MODAUX
@@ -13,6 +14,7 @@ import WelcomeAnnouncingLatestfilms_Series from "./popups/WelcomeAnnouncingLates
 
 export {
   AppLayout,
+  Movie_ID_Layout,
   // MODAUX
   GlobalModauxFeatured,
   ModalInfosMovie,

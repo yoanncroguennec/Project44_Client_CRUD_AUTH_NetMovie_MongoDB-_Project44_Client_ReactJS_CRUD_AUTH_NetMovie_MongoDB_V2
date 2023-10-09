@@ -1,25 +1,22 @@
 import { Box, Typography, styled } from "@mui/material";
 
-
-export const styles_MotionEffect_Div = {
-  marginTop: "150px",
-  boxShadow:
-    "rgba(255, 0, 0, 0.5) 0px 10px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px", // box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
-  background: "rgba(255, 255, 255, 0.5)",
-  padding: "100px",
-  borderRadius: "25px",
-  
-};
-
 export const RootSlide_BG_Mobie = styled(Box)(({ theme }) => ({
+  position: "relative",
+  top: "0",
+  // left: "0",
+  // left: "40px",
+  top: "20px",
+  // zIndex: 9,
+  // background: "red",
   height: "100vh",
-  // overflow: "hidden",
+  overflow: "hidden",
   width: "100vw",
+  // padding: ""
   "&::before, &::after": {
     background:
       "linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)",
     content: "''",
-    height: "100%",
+    // height: "100%",
     position: "absolute",
     width: "15%",
     // zIndex: "2",
@@ -58,19 +55,20 @@ export const BoxSlideTrackImgs = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const SlideImgs = styled(Box)(({ theme }) => ({
-  height: "700px",
+export const SlideImgs = styled(Box)(({ matches }) => ({
+  height: `${matches ? "120px" : "450px"}`,
   /***** To make the img move on the "Z axis" (depth), we need to add to its container (".slide") a perspective *****/
   /***** Pour que l'image se déplace sur l' axe Z (profondeur), nous devons ajouter à son conteneur (".slide") une perspective *****/
   perspective: "100px",
   /** width: 700px; **/
-  width: "700px",
+  width:`${matches ? "120px" : "700px"}`,
 }));
 
 /*******************************************************************/
 /*******************************************************************/
 /*******************************************************************/
 /*******************************************************************/
+
 
 export const BoxListMovies = styled(Box)(({ theme }) => ({
   alignItems: "center",
@@ -107,13 +105,8 @@ export const BoxTrailer_MovieLink = styled(Box)(({ theme }) => ({
   marginTop: "55px",
   zIndex: "999",
   [theme.breakpoints.down("sm")]: {
-    // display: "flex",
-    // flexDirection: "column",
+    display: "flex",
+    flexDirection: "column",
+    // width: "70%",
   },
-}));
-
-export const Typo_WarningNoMovieYouMustConnect = styled(Typography)(({ theme }) => ({
-  color: "#F00",
-  textShadow: "1px 1px 2px #000",
-  fontWeight: "bold",
 }));

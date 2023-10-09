@@ -7,10 +7,12 @@ import {
   Home,
   ListAllMovies,
   Page_Featured_And_SliderCategoryListMovies,
+  Movie_By_ID,
 } from "../movies/pages";
 // Layouts
 import {
   AppLayout,
+  Movie_ID_Layout,
   WelcomeAnnouncingLatestfilms_Series,
 } from "../movies/components/layouts";
 
@@ -72,6 +74,20 @@ export default function Router() {
         {
           path: "movies/listAllMovies",
           element: <ListAllMovies />,
+        },
+      ],
+    },
+    {
+      element: <Movie_ID_Layout />,
+      children: [
+        {
+          path: "movies/:id",
+          element: (
+            <Movie_By_ID
+              token={token}
+              id_Of_ConnectedUser={id_Of_ConnectedUser}
+            />
+          ),
         },
       ],
     },

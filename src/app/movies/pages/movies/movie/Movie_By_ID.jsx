@@ -6,17 +6,13 @@ import Iframe from "react-iframe";
 import { motion } from "framer-motion";
 import { Fade } from "react-awesome-reveal";
 // import Fade from "react-reveal/Fade";
-import {
-  Typography,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
+import { Typography, useTheme, useMediaQuery } from "@mui/material";
 // COMPONENT UTILS
 import {
   BreadcrumbsMovie,
   BooleanIfMovieViewed_Rating,
   LoaderSpinner,
-} from "../../../../../badMovies/movies/components/utils";
+} from "../../../components/utils";
 // STYLES
 import {
   styles_MotionEffect_Div,
@@ -26,18 +22,16 @@ import {
   Typo_WarningNoMovieYouMustConnect,
 } from "./StylesMovie_By_ID";
 
-//////////////////// EXPORT FUNCTION PAGE ////////////////////
+/// EXPORT FUNCTION PAGE
 export default function Movie_By_ID({ token, id_Of_ConnectedUser }) {
   const params = useParams();
 
-  //////////////////// RESPONSIVE ////////////////////
+  /// RESPONSIVE
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
 
-  //////////////////////////////////////////////////// STYLES /////////////////////////////////////////////////////
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  ///////// ATTENTION ! NE PAS SUPPRIMER CE STYLES SINON CA N'AFFICHERA PLUS LE BOX SUR LE BG SLIDER IMGS /////////
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /// STYLES
+  //// ATTENTION ! NE PAS SUPPRIMER CE STYLES SINON CA N'AFFICHERA PLUS LE BOX SUR LE BG SLIDER IMGS ////
   const stylesRootMovie_By_ID = {
     alignItems: "center",
     fontSize: "5em",
@@ -85,10 +79,10 @@ export default function Movie_By_ID({ token, id_Of_ConnectedUser }) {
     fetchData();
   }, [params.id]);
 
-
-  const transition_MotionEffect_Div = {
-    type: "spring", damping: 5
-  }
+  const transition_MotionEffect_Div = {
+    type: "spring",
+    damping: 5,
+  };
   const {
     _id,
     name,

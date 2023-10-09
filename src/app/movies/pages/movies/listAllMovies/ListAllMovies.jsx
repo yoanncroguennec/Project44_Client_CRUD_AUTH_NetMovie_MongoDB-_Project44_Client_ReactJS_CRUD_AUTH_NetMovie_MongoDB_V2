@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Typography, useTheme, useMediaQuery } from "@mui/material";
+import { useTheme, useMediaQuery } from "@mui/material";
 import axios from "axios";
 
 
@@ -54,13 +54,16 @@ export default function Index() {
     <></>
   ) : (
     // <LoaderSpinner />
-    <div>
+    <div style={{ background: "#FFF" }}>
       {matches ? (
         <ListAllMovies_Cellular
           allMovies={allMovies}
           countAllMovies={countAllMovies}
           styleImg={styleImg}
           TruncateDesc={TruncateDesc}
+          page={page}
+          setPage={setPage}
+          limit={limit}
         />
       ) : (
         <ListAllMovies_Desktop
@@ -68,6 +71,9 @@ export default function Index() {
           countAllMovies={countAllMovies}
           styleImg={styleImg}
           TruncateDesc={TruncateDesc}
+          page={page}
+          setPage={setPage}
+          limit={limit}
         />
       )}
     </div>

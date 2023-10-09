@@ -1,4 +1,4 @@
-import { GlobalBtn } from "../../layouts";
+import { GlobalBtns } from "../../layouts";
 import {
   BiSolidChevronsLeft,
   FaChevronRight,
@@ -58,7 +58,7 @@ export default function Pagination({ page, limit, setPage, countAllMovies }) {
                   width: "250px",
                 }}
               >
-                <GlobalBtn
+                <GlobalBtns
                   titleTooltipBtn='Première page'
                   onClickAction={() => {
                     // setPage(0);
@@ -67,7 +67,7 @@ export default function Pagination({ page, limit, setPage, countAllMovies }) {
                   colorIconBtn='#F00'
                   iconBtn={<BiSolidChevronsLeft size={45} />}
                 />
-                <GlobalBtn
+                <GlobalBtns
                   titleTooltipBtn='Page précédente'
                   onClickAction={() => {
                     // setPage(page - 1);
@@ -106,7 +106,7 @@ export default function Pagination({ page, limit, setPage, countAllMovies }) {
                   width: "220px",
                 }}
               >
-                <GlobalBtn
+                <GlobalBtns
                   titleTooltipBtn='Page suivante'
                   onClickAction={() => {
                     handleClick("plus");
@@ -114,7 +114,7 @@ export default function Pagination({ page, limit, setPage, countAllMovies }) {
                   colorIconBtn='#F00'
                   iconBtn={<FaChevronRight size={35} />}
                 />
-                <GlobalBtn
+                <GlobalBtns
                   titleTooltipBtn='Dernière page'
                   onClickAction={() => {
                     // setPage(0);
