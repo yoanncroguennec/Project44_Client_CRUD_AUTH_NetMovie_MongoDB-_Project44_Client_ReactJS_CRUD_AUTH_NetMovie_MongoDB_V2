@@ -32,16 +32,16 @@ export default function ComponentBoxFeatured({
   CloseModalInfosMovie,
   OpenModalTheWholeFilm,
 }) {
-  //////////////////// RESPONSIVE ////////////////////
+  /// RESPONSIVE
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
 
-  //////////////////// DROPDOWN CATEGORIES ////////////////////
+  /// DROPDOWN CATEGORIES
   const type = "movie";
   const [selected, setSelected] = useState("");
   const [isActive, setIsActive] = useState(false);
 
-  //////////////////// DATA THREE BTNS ////////////////////
+  /// DATA THREE BTNS
   const dataThreeBtns = [
     {
       onClickAction: OpenModalTrailer,
@@ -73,7 +73,7 @@ export default function ComponentBoxFeatured({
           </DropdownBtn>
           {isActive && (
             <>
-              <BoxActiveDropdown>
+              <BoxActiveDropdown >
                 {valueCategoryDropdownFeatured.map(
                   ({ textCategory, urlCategory, index }) => (
                     <Link

@@ -1,21 +1,24 @@
-import {
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
-import { AiOutlineClose } from "react-icons/ai";
-import { GiHamburgerMenu } from "react-icons/gi"
-import ExtendNavbarBottomCellular from "./ExtendNavbarBottomCellular";
-import { FaPlus } from "react-icons/fa";
-import bgWebRadios from "./radios1.jpg";
-import iconsRadio64 from "./iconsRadio64.png";
-import moreApplication from "./moreApplication.jpg";
-import img4 from "./img4.jpeg";
-import television94 from "./television94.png";
-import contact from "./contact1.jpg";
-import myProfile from "./myProfile.jpg";
-// import NavbarBottom from "./navbar/navbarBottom/NavbarBottom";
 import { useState } from "react";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import ExtendNavbarBottomCellular from "./ExtendNavbarBottomCellular";
+// ICONS
+import {
+  AiOutlineClose,
+  FaPlus,
+  GiHamburgerMenu,
+} from "../../../../../utils/assets/movies/icons";
+// IMGS
+import {
+  bgWebRadios,
+  iconsRadio64,
+  moreApplication,
+  img4,
+  television94,
+  contact,
+  myProfile,
+} from "../../../../../utils/assets/movies/imgs";
+// import NavbarBottom from "./navbar/navbarBottom/NavbarBottom";
+// STYLES
 import {
   BoxBtbnCloseMenuCircle,
   BoxBtnOpenCloseMenuCircle,

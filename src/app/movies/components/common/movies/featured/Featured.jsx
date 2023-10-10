@@ -70,8 +70,6 @@ const [loading, setLoading] = useState(false);
     setModalTheWholeMovie(false);
   }
 
-
-
   //////////////////// RETURN ////////////////////
   return loading ? (
     <>CHARGEMENT</>

@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCoverflow,
   //Pagination,
@@ -26,14 +26,18 @@ export default function ListAllMovies_Cellular({
   }
 
   return (
-    <>
-      <Typography variant='h6'>
+    <div style={{ paddingTop: "50px" }}>
+      <Typography sx={{ fontWeight: "bold", textAlign: "center" }} variant='h5'>
         {allMovies.length} films sur cette page
       </Typography>
+      <Pagination
+        page={page}
+        countAllMovies={countAllMovies}
+        setPage={setPage}
+        limit={limit}
+      />
       <div className='container'>
-        {/* <h1 className='heading'>Flower Gallery</h1> */}
-
-        <Swiper
+        {/* <Swiper
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
@@ -53,8 +57,8 @@ export default function ListAllMovies_Cellular({
           }}
           modules={[EffectCoverflow, Pagination, Navigation]}
           className='swiper_container'
-        >
-          {allMovies
+        > */}
+          {/* {allMovies
             // sortByAlphabeticalOrder
             // .sort((a, b) => (a.name > b.name ? 1 : -1))
             .map(
@@ -111,14 +115,14 @@ export default function ListAllMovies_Cellular({
                     <Typography className='oo' variant='h2'>
                       Swiper
                     </Typography>
-                    {/* <div className="iip">
+                    <div className="iip">
                       <BsHandIndexThumb
                       className="icon"
                         color='#F00'
                         size={45}
                         style={{ zIndex: 7 }}
                       />
-                    </div> */}
+                    </div>
                     <Typography sx={{ fontWeight: "bold" }} variant='h6'>
                       {name}
                     </Typography>
@@ -152,7 +156,7 @@ export default function ListAllMovies_Cellular({
                   </div>
                 </SwiperSlide>
               )
-            )}
+            )} */}
           {/* <div className='slider-controler'>
             <div className='swiper-button-prev slider-arrow'>
               <ion-icon name='arrow-back-outline'></ion-icon>
@@ -162,15 +166,16 @@ export default function ListAllMovies_Cellular({
             </div>
             <div className='swiper-pagination'></div>
           </div> */}
-        </Swiper>
-        <Pagination
-          page={page}
-          countAllMovies={countAllMovies}
-          setPage={setPage}
-          limit={limit}
-        />
+        {/* </Swiper> */}
+
         <div className='sss'></div>
       </div>
-    </>
+    </div>
   );
 }
+
+
+
+
+
+

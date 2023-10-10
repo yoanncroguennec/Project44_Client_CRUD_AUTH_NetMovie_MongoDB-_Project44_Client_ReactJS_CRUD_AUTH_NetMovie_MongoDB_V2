@@ -32,8 +32,8 @@ export const BoxNoDescription = styled(Box)(({ theme }) => ({
   margin: "25px",
 }));
 
-export const StylesTypoDesc = {
-  color: "#FFF",
-  margin: "35px",
-  textAlign: "justify",
-};
+export const BoxThreeBtns = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexWrap: "nowrap",
+  justifyContent: "space-between",
+}));

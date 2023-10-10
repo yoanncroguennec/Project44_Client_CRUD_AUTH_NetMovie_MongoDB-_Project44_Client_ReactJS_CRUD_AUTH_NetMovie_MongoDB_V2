@@ -38,12 +38,14 @@ export default function ListSliderCategoryListMovies({ list }) {
   const { title, content } = list;
   const tt = `${content.length}`;
   console.log("tt :", tt);
+
   return (
     <RootRow maxWidth='xl'>
       <BoxRow>
         <TypoTitleListSliderCategoryListMovies variant='h5'>
           {title} : {content.length} films dans le slide
         </TypoTitleListSliderCategoryListMovies>
+
         {tt > 10 ? (
           <Typography color='error' variant='h2'>
             Pas plus de films
@@ -53,12 +55,15 @@ export default function ListSliderCategoryListMovies({ list }) {
             Voir plus de films dans la catégorie
           </Typography>
         )}
+
+        
         <BoxRowIndividually>
           <BiChevronLeft
             size={22}
             style={styleBiChevronLeft}
             onClick={() => handleClick_Btns_Slider_CategoryListMovies("left")}
           />
+
           <BoxListMovies ref={rowRef}>
             {content
               // .slice(0, 5)

@@ -1,14 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 body {
   margin: 0;
   padding: 0;
 }
 
-
-/* STYLE SCROLLBAR */
 ::-webkit-scrollbar {
   background: #000;
   width: 0.7em;
@@ -24,7 +19,6 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #F00;
   border: 0.25em solid #F00;
-  /* height: 1em!important; */
   border-radius: 100vw;
 }
 
@@ -33,11 +27,9 @@ body {
 
 .marquee-rtl {
   max-width: 30em;
-  /* largeur de la fenêtre */
   margin: 1em auto 2em;
   border: 10px solid #F0F0FF;
   overflow: hidden;
-  /* masque tout ce qui dépasse */
   box-shadow: 0 .25em .5em #CCC, inset 0 0 1em .25em #CCC;
 }
 
@@ -54,13 +46,11 @@ body {
   0% {
     transform: translate3d(0, 0, 0);
     opacity: 0.1;
-    /* position initiale à droite */
   }
 
   100% {
     transform: translate3d(-100%, 0, 0);
     opacity: 1;
-    /* position finale à gauche */
   }
 }
 
@@ -70,15 +60,6 @@ body {
   animation-iteration-count: 1;
 }
 
-@keyframes img {
-  /* 0% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 0;
-  } */
-}
 
 .oo {
   color: #F00;
@@ -89,14 +70,6 @@ body {
   animation-direction: alternate;
 }
 
-@keyframes text {
-  /* 0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  } */
-}
 
 .sss {
   width: 100px;
@@ -104,8 +77,6 @@ body {
     background-color: red;
     animation: ss 5s linear;
     position: relative;
-    /* animation-name: example;
-    animation-duration: 4s; */
 }
 
 @-webkit-keyframes ss {
@@ -170,8 +141,7 @@ body {
 }
 
 .container {
-  /* background: blue; */
-  max-width: 80%;
+  max-width: 90%;
   padding: 4rem 1rem;
   margin: 0 auto;
 }
@@ -203,21 +173,6 @@ body {
   object-fit: cover;
 }
 
-/* @media (max-width: 500px) {
-  .swiper_container {
-    height: 47rem;
-  }
-
-  .swiper-slide {
-    width: 28rem !important;
-    height: 36rem !important;
-  }
-
-  .swiper-slide img {
-    width: 28rem !important;
-    height: 36rem !important;
-  }
-} */
 
 
 
@@ -298,4 +253,4 @@ body {
 
 .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
-}
+} 

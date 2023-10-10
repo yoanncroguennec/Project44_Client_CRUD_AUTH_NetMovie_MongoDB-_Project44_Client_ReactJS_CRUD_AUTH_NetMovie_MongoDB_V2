@@ -32,9 +32,9 @@ export default function GlobalBtns({
             display: "flex",
             flexWrap: "nowrap",
             justifyContent: "center",
-            // marginBottom: "50px",
+            margin: `${matches ? "2px 5px" : "5px 0"}`,
             alignItems: "center",
-            padding: `${matches ? "2px 5px" : "5px 25px"}`,
+            padding: `${matches ? "5px 0" : "5px 25px"}`,
             borderRadius: "50px",
             cursor: "pointer",
           }}
@@ -52,7 +52,7 @@ export default function GlobalBtns({
           </div>
           <Typography
             style={{ color: "#F00", fontWeight: "bold" }}
-            variant={matches ? "caption" : "h6"}
+            variant='h6'
           >
             {textBtn}
           </Typography>

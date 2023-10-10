@@ -12,6 +12,7 @@ import {
   EffectNoActiveText,
   BoxItemNavbarForCellularTheBottom,
 } from "./StylesExtendNavbarBottomCellular";
+import { Link } from "react-router-dom";
 
 export default function ExtendNavbarBottomCellular() {
   //////////////////// RESPONSIVE ////////////////////
@@ -27,25 +28,27 @@ export default function ExtendNavbarBottomCellular() {
           dataExtendNavbarCellular={dataExtendNavbarCellular}
           activeItem={activeItem}
         />
-        {dataExtendNavbarCellular.map((menu, id) => (
-          <BoxItemNavbarForCellularTheBottom
+        {dataExtendNavbarCellular.map(({ id, url, nameItem, icon }) => (
+         <Link to={url}>
+           <BoxItemNavbarForCellularTheBottom
             key={id}
             onClick={() => setActiveItem(id)}
           >
             {activeItem === id ? (
               <>
-                <EffectActiveIcon>{menu.icon}</EffectActiveIcon>
+                <EffectActiveIcon>{icon}</EffectActiveIcon>
                 <EffectActiveText>
-                  <Typography variant='body2'>{menu.nameItem}</Typography>
+                  <Typography variant='body2'>{nameItem}</Typography>
                 </EffectActiveText>
               </>
             ) : (
               <>
-                <EffectNoActiveIcon>{menu.icon}</EffectNoActiveIcon>
-                <EffectNoActiveText>{menu.nameItem}</EffectNoActiveText>
+                <EffectNoActiveIcon>{icon}</EffectNoActiveIcon>
+                <EffectNoActiveText>{nameItem}</EffectNoActiveText>
               </>
             )}
           </BoxItemNavbarForCellularTheBottom>
+          </Link>
         ))}
       </BoxListItemsNavbarForCellularTheBottom>
     </RootNavbarForCellularTheBottom>

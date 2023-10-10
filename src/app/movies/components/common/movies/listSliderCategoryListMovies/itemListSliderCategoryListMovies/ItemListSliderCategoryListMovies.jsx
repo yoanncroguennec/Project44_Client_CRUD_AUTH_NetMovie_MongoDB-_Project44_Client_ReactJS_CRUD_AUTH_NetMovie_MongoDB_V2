@@ -15,10 +15,10 @@ export default function ItemListSliderCategoryListMovies({ item }) {
 
   const StylesImgItem = {
     height: `${matches ? "120px" : "200px"}`,
-    width: `${matches ? "200px" : "350px"}`,
+    width: `${matches ? "200px" : "450px"}`,
   };
 
-  //////////// GET OBTAIN INFOS ON EACH ITEM IN THE CATEGORY SLIDER ////////////
+  /// GET OBTAIN INFOS ON EACH ITEM IN THE CATEGORY SLIDER
   const [movie, setMovie] = useState({});
   useEffect(() => {
     const getMovie = async () => {

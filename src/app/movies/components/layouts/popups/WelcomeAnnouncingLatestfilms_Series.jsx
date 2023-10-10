@@ -41,7 +41,7 @@ export default function WelcomeAnnouncingLatestfilms_Series() {
     height: `${matches ? "70px" : "130px"}`,
     marginLeft: `${matches ? "-30px" : ""}`,
     marginRight: `${matches ? "5px" : "50px"}`,
-    width: `${matches ? "70px" : "230px"}`,
+    width: `${matches ? "80px" : "230px"}`,
   };
 
   // GET API Display Latest Movies In BDD
@@ -70,13 +70,13 @@ export default function WelcomeAnnouncingLatestfilms_Series() {
     <RootDialog open={open} TransitionComponent={Transition} keepMounted>
       <DialogContent>
         <Typography
-          align='center'
           sx={{
+            textAlign: "center",
             fontFamily: "'Sacramento', cursive",
             color: "red",
             fontWeight: "600",
           }}
-          variant={matches ? "h4" : "h3"}
+          variant={matches ? "h6" : "h3"}
         >
           Derniers films & séries {matches ? "" : "ajoutés sur Net Movie :"}
         </Typography>
@@ -95,7 +95,7 @@ export default function WelcomeAnnouncingLatestfilms_Series() {
             >
               <Typography
                 sx={{ fontWeight: "bold" }}
-                variant={matches ? "h5" : "h4"}
+                variant={matches ? "h6" : "h4"}
               >
                 01
               </Typography>
@@ -116,7 +116,7 @@ export default function WelcomeAnnouncingLatestfilms_Series() {
               </Typography>
             </div>
           </AccordionSummary>
-          <AccordionDetails style={{ background: "blue", width: "" }}>
+          <AccordionDetails style={{ background: "blue", width: "870px" }}>
             {displayLatestMoviesInBDD
               // sortByAlphabeticalOrder
               .sort((a, b) => a.name > b.name)
@@ -155,7 +155,7 @@ export default function WelcomeAnnouncingLatestfilms_Series() {
             >
               <Typography
                 sx={{ fontWeight: "bold" }}
-                variant={matches ? "h5" : "h4"}
+                variant={matches ? "h6" : "h4"}
               >
                 02
               </Typography>

@@ -5,9 +5,13 @@ import {
   FaChevronLeft,
   BiSolidChevronsRight,
 } from "../../../../../app/utils/assets/movies/icons";
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 
 export default function Pagination({ page, limit, setPage, countAllMovies }) {
+  /// RESPONSIVE
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
+
   const handleClick = (action) => {
     if (action === "minus") setPage(page - 1);
     else if (action === "plus") setPage(page + 1);
@@ -21,31 +25,33 @@ export default function Pagination({ page, limit, setPage, countAllMovies }) {
     <>
       <div
         style={{
+          background: "blue",
           display: "flex",
           flexWrap: "nowrap",
           margin: "15px 0",
           justifyContent: "center",
           alignItems: "center",
-          width: "100vw",
+          width: `${matches ? "100px" : "100vw"}`,
         }}
       >
         <div
           style={{
-            background: "",
+            background: "grey",
             display: "flex",
             flexWrap: "nowrap",
             justifyContent: "space-between",
             alignItems: "center",
-            width: "600px",
+            width: `${matches ? "100px" : "600px"}`,
           }}
         >
           <div
             style={{
+              background: "yellow",
               display: "flex",
               flexWrap: "nowrap",
               justifyContent: "space-between",
               alignItems: "center",
-              width: "220px",
+              width: `${matches ? "150px" : "220px"}`,
             }}
           >
             {page > 1 && (
@@ -82,8 +88,9 @@ export default function Pagination({ page, limit, setPage, countAllMovies }) {
 
           <div
             style={{
+              background: "green",
               position: "relative",
-              width: "990px",
+              width: "100px",
               left: "40px",
               top: "-25px",
             }}
@@ -103,7 +110,7 @@ export default function Pagination({ page, limit, setPage, countAllMovies }) {
                   flexWrap: "nowrap",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  width: "220px",
+                  width: `${matches ? "150px" : "220px"}`,
                 }}
               >
                 <GlobalBtns

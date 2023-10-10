@@ -8,6 +8,8 @@ import {
   ListAllMovies,
   Page_Featured_And_SliderCategoryListMovies,
   Movie_By_ID,
+  Login,
+  MyProfile,
 } from "../movies/pages";
 // Layouts
 import {
@@ -15,6 +17,11 @@ import {
   Movie_ID_Layout,
   WelcomeAnnouncingLatestfilms_Series,
 } from "../movies/components/layouts";
+import Paint from "../othersApplications/paint/Paint";
+import Global_OthersApplications_layouts from "../othersApplications/global_OthersApplications_layouts/Global_OthersApplications_layouts";
+import BreakOut from "../games/breakOut/BreakOut";
+import IndexGlobalApp from "../othersApplications/IndexGlobalApp";
+import Generate_QR_Code from "../othersApplications/generate_QR_Code/Generate_QR_Code";
 
 export default function Router() {
   ///////// COOKIES
@@ -55,6 +62,9 @@ export default function Router() {
         },
       ],
     },
+    //////////////////////////////////////////////////////////
+    ////////////////////////// USER //////////////////////////
+    //////////////////////////////////////////////////////////
     {
       element: (
         <AppLayout
@@ -64,9 +74,7 @@ export default function Router() {
         />
       ),
       children: [
-        //////////////////////////////////////////////////////////
-        ////////////////////////// USER //////////////////////////
-        //////////////////////////////////////////////////////////
+        /// MOVIES
         {
           path: "/featured_SliderCategoryListMovies",
           element: <Page_Featured_And_SliderCategoryListMovies />,
@@ -74,6 +82,21 @@ export default function Router() {
         {
           path: "movies/listAllMovies",
           element: <ListAllMovies />,
+        },
+        /// AUTH
+        {
+          path: "auth/login",
+          element: <Login handleTokenAndId={handleTokenAndId} />,
+        },
+        {
+          path: "auth/myProfile",
+          element: (
+            <MyProfile
+              token={token}
+              id_Of_ConnectedUser={id_Of_ConnectedUser}
+              handleTokenAndId={handleTokenAndId}
+            />
+          ),
         },
       ],
     },
@@ -88,6 +111,50 @@ export default function Router() {
               id_Of_ConnectedUser={id_Of_ConnectedUser}
             />
           ),
+        },
+      ],
+    },
+    /////////////////////////////////////////////////////////////////////////
+    ////////////////////////// OTHERS APPLICATIONS //////////////////////////
+    /////////////////////////////////////////////////////////////////////////
+    {
+      element: <Global_OthersApplications_layouts />,
+      children: [
+        {
+          path: "othersApplications/home",
+          element: <IndexGlobalApp />,
+        },
+        {
+          path: "othersApplications/paint",
+          element: <Paint />,
+        },
+        {
+          path: "othersApplications/generate_QR_Code",
+          element: <Generate_QR_Code />,
+        },
+        // {
+        //   path: "othersApplications/",
+        //   element: <BreakOut />,
+        // },
+        // {
+        //   path: "othersApplications/",
+        //   element: <BreakOut />,
+        // },
+        // {
+        //   path: "othersApplications/",
+        //   element: <BreakOut />,
+        // },
+      ],
+    },
+    /////////////////////////////////////////////////////////////////////////
+    /////////////////////////////// GAMES ///////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////
+    {
+      element: <Global_OthersApplications_layouts />,
+      children: [
+        {
+          path: "games/breakOut",
+          element: <BreakOut />,
         },
       ],
     },

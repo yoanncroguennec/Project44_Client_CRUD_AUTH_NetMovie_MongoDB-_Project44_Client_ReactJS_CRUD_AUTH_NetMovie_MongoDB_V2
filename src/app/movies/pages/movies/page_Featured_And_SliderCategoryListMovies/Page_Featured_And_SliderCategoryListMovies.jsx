@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
   Featured,
-  // ListSliderCategoryListMovies,
+  ListSliderCategoryListMovies,
 } from "../../../components/common";
+import Row from "./Row";
 
 export default function Page_Featured_And_SliderCategoryListMovies() {
   const [categoryListMovie, setCategoryListMovie] = useState([]);
@@ -15,7 +16,7 @@ export default function Page_Featured_And_SliderCategoryListMovies() {
         const res = await axios.get(
           `${process.env.REACT_APP_API_URL}/categoryListMovie`
         );
-        console.log("categoryListMovie :", res.data.list);
+        // console.log("categoryListMovie :", res.data.list);
         setCategoryListMovie(res.data.list);
         setLoading(false);
       } catch (err) {
@@ -28,13 +29,12 @@ export default function Page_Featured_And_SliderCategoryListMovies() {
   return loading ? (
     <>chargement</>
   ) : (
-    <div
-    // A REVOIR LE BG COLOR CAR A SUPRIMER ET METTRE UN TOGLLE DARK MODE A LA RACINE
-    // style={{ background: "#000" }}
-    >
+    <div>
       <Featured />
-      {/* 
-      {categoryListMovie.map((list, index) => (
+      {categoryListMovie?.map((list, index ) => (
+        <Row key={index} list={list} />
+      ))}
+      {/* {categoryListMovie.map((list, index) => (
         <ListSliderCategoryListMovies key={index} list={list} />
       ))} */}
     </div>
