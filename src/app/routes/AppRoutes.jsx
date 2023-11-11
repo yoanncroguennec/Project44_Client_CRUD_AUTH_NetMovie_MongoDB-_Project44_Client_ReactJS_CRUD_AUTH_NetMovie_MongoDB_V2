@@ -1,28 +1,42 @@
 import { useState } from "react";
 import { useRoutes } from "react-router-dom";
 import Cookies from "js-cookie";
+// LAYOUTS
+import {
+  AppLayout,
+  Movie_ID_Layout,
+  Admin_Layout,
+  WelcomeAnnouncingLatestfilms_Series,
+} from "../components/layouts";
 // PAGES
 import {
   // Page_Featured_And_SliderCategoryListMovies,
   Home,
+  // MOVIES
   ListAllMovies,
-  Page_Featured_And_SliderCategoryListMovies,
+  ListMovieByCategory,
   Movie_By_ID,
+  Page_Featured_And_SliderCategoryListMovies,
+  // FAVORITES
+  ListFarorites_WithoutMongodb_WithLocalStorage,
+  // AUTH
   Login,
   MyProfile,
-} from "../movies/pages";
-// Layouts
-import {
-  AppLayout,
-  Movie_ID_Layout,
-  WelcomeAnnouncingLatestfilms_Series,
-} from "../movies/components/layouts";
-import Paint from "../othersApplications/paint/Paint";
-import Global_OthersApplications_layouts from "../othersApplications/global_OthersApplications_layouts/Global_OthersApplications_layouts";
-import BreakOut from "../games/breakOut/BreakOut";
-import IndexGlobalApp from "../othersApplications/IndexGlobalApp";
-import Generate_QR_Code from "../othersApplications/generate_QR_Code/Generate_QR_Code";
+  // ADMIN
+  Dashboard,
+  NewUser,
+  Admin_ListUsers,
+  UserLocation_And_IP_Address,
+  Admin_CategoryListMovie,
+  Admin_NewCategoryListMovie,
+  Admin_ListMovies,
+  Admin_NewMovie,
+  StaticsWithLineChartJs,
+  StaticsWithBarChartJs,
+  Admin_UpdateMovie,
+} from "../pages";
 
+// EXPORT FUNCTION
 export default function Router() {
   ///////// COOKIES
   const [token, setToken] = useState(Cookies.get("token") || null);
@@ -83,6 +97,14 @@ export default function Router() {
           path: "movies/listAllMovies",
           element: <ListAllMovies />,
         },
+        {
+          path: "movies/listMovieByCategory",
+          element: <ListMovieByCategory />,
+        },
+        {
+          path: "movies/listFarorites_WithoutMongodb_WithLocalStorage",
+          element: <ListFarorites_WithoutMongodb_WithLocalStorage />,
+        },
         /// AUTH
         {
           path: "auth/login",
@@ -100,6 +122,9 @@ export default function Router() {
         },
       ],
     },
+    /////////////////////////////////////////////////////////////////////////
+    ////////////////////////////// MOVIE BY ID //////////////////////////////
+    /////////////////////////////////////////////////////////////////////////
     {
       element: <Movie_ID_Layout />,
       children: [
@@ -115,46 +140,59 @@ export default function Router() {
       ],
     },
     /////////////////////////////////////////////////////////////////////////
-    ////////////////////////// OTHERS APPLICATIONS //////////////////////////
+    ///////////////////////////////// ADMIN /////////////////////////////////
     /////////////////////////////////////////////////////////////////////////
     {
-      element: <Global_OthersApplications_layouts />,
+      element: <Admin_Layout />,
       children: [
+        // ADMIN -DASHBOARD
         {
-          path: "othersApplications/home",
-          element: <IndexGlobalApp />,
+          path: "admin/dashboard",
+          element: <Dashboard />,
+        },
+        // ADMIN - USERS
+        {
+          path: "admin/listUsers",
+          element: <Admin_ListUsers />,
         },
         {
-          path: "othersApplications/paint",
-          element: <Paint />,
+          path: "admin/newUser",
+          element: <NewUser />,
         },
         {
-          path: "othersApplications/generate_QR_Code",
-          element: <Generate_QR_Code />,
+          path: "admin/userLocation_And_IP_Address",
+          element: <UserLocation_And_IP_Address />,
         },
-        // {
-        //   path: "othersApplications/",
-        //   element: <BreakOut />,
-        // },
-        // {
-        //   path: "othersApplications/",
-        //   element: <BreakOut />,
-        // },
-        // {
-        //   path: "othersApplications/",
-        //   element: <BreakOut />,
-        // },
-      ],
-    },
-    /////////////////////////////////////////////////////////////////////////
-    /////////////////////////////// GAMES ///////////////////////////////////
-    /////////////////////////////////////////////////////////////////////////
-    {
-      element: <Global_OthersApplications_layouts />,
-      children: [
+        // ADMIN - MOVIES
         {
-          path: "games/breakOut",
-          element: <BreakOut />,
+          path: "admin/admin_ListMovies",
+          element: <Admin_ListMovies />,
+        },
+        {
+          path: "admin/newMovie",
+          element: <Admin_NewMovie />,
+        },
+        {
+          path: "admin/updateMovie/:id",
+          element: <Admin_UpdateMovie />,
+        },
+        // ADMIN - CATEGORIES
+        {
+          path: "admin/admin_CategoriesListMovies",
+          element: <Admin_CategoryListMovie />,
+        },
+        {
+          path: "admin/admin_NewCategoryListMovie",
+          element: <Admin_NewCategoryListMovie />,
+        },
+        // ADMIN - STATICS
+        {
+          path: "admin/line_ChartJs/statics_movies_and_listcategoryMovies",
+          element: <StaticsWithLineChartJs />,
+        },
+        {
+          path: "admin/bar_ChartJs/statics_movies_and_listcategoryMovies",
+          element: <StaticsWithBarChartJs />,
         },
       ],
     },

@@ -1,0 +1,13 @@
+.content {
+    color: #85662B;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.content.show {
+    background: blue;
+    /* height: auto;
+    min-height: 250px; */
+    transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
